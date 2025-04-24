@@ -12,14 +12,6 @@ public abstract class Product {
     //Abstract method doesn't have body
     public abstract String getType();
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getId() {
         return id;
     }
