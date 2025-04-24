@@ -1,5 +1,7 @@
 package items;
 
+import exception.ExpiredProductException;
+
 public class Perishable extends Product{
     private int expirationDay;
 
@@ -19,6 +21,15 @@ public class Perishable extends Product{
 
     public boolean isExpired(int today){
         return (expirationDay < today);
+    }
+
+    // Process the product and check if it's expired
+    public void process(int today) throws ExpiredProductException {
+        if(isExpired(today)){
+            throw new ExpiredProductException("Product " + name + " is expired and cannot be processed.");
+        } else {
+            System.out.println("Processing perishable product: " + name);
+        }
     }
 
     @Override
