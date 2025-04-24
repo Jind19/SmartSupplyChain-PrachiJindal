@@ -1,13 +1,16 @@
 package main;
 
+import exception.EmptyStorageException;
 import exception.ExpiredProductException;
+import exception.InvalidInputException;
+import inventory.StorageUnit;
 import items.Document;
 import items.Electronic;
 import items.Perishable;
 import items.Product;
 
 public class SmartSupplyChainApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidInputException, EmptyStorageException {
 
 
         Product doc = new Document(1, "Passport", "Id");
@@ -26,6 +29,13 @@ public class SmartSupplyChainApp {
         } catch(ExpiredProductException e){
             System.out.println("Error: " +e.getMessage());
         }
+
+
+        StorageUnit<Product> singleStorage = new StorageUnit<>();
+        singleStorage.addItem(doc);
+        System.out.println("Single Storage: " + singleStorage.getItem());
+
+
 
     }
 }
