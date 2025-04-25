@@ -6,6 +6,10 @@ import exception.InvalidInputException;
 public class StorageUnit<T> {
     private T item;
 
+    public StorageUnit() {
+        this.item = item;
+    }
+
     // Add item to storage
     public void addItem(T item) throws InvalidInputException {
         if(item == null){

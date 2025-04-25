@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Package<T extends Product>{
-    private List<T> items = new ArrayList<>();
+    private List<T> items;
+
+    public Package() {
+        this.items = new ArrayList<>();
+    }
 
     public void addItem(T item) throws InvalidInputException {
         if (item == null) {

@@ -10,7 +10,11 @@ import java.util.Map;
 
 public class Inventory<T extends Product> {
 
-    private Map<String, Package<T>> packageMap = new HashMap<>();
+    private Map<String, Package<T>> packageMap;
+
+    public Inventory() {
+        this.packageMap = new HashMap<>();
+    }
 
     public void addNewPackage(String id, Package<T> pkg) throws InvalidInputException {
         if (id == null || pkg == null) {

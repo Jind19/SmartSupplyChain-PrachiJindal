@@ -8,7 +8,11 @@ import java.util.List;
 
 public class MultiStorageUnit<T>{
 
-    private List<T> items = new ArrayList<>();
+    private List<T> items;
+
+    public MultiStorageUnit() {
+        this.items = new ArrayList<>();
+    }
 
     //Add single item t storage
     public void addItem(T newItem) throws InvalidInputException {
