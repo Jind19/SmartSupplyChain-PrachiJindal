@@ -20,6 +20,7 @@ public class StorageUnit<T> {
         if (item == null) { // 🧠 This is how we know it's empty!
             throw new EmptyStorageException("Storage is empty! Cannot retrieve item.");
         }
+        System.out.println("Item in storage: " + item);
         return item;
     }
 
